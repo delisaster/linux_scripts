@@ -18,7 +18,8 @@ for i in $nfs_server; do
    for j in $mount_folders; do
         if [ $exit_status -eq 1 ]; then
                 echo "NFS mount stale. Removing..."
-                umount -f -l $j
+                # gracefuly umount stale mountpoints
+                umount -f -l $j 
         else
                 fs=$(df -P -T $j | tail -n +2 | awk '{print $2}')
                 echo "Filesystem on $j is $fs"
