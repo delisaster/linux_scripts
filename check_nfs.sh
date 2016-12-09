@@ -2,13 +2,14 @@
 
 
 # get unique list of used nfs servers from /etc/fstab
-nfs_server=$(grep nfs /etc/fstab |grep "^[^#;]"|awk  '{print $1}'|cut -d \: -f 1|sort -u)
+nfs_server=$(grep -P "[[:space:]]nfs[[:space:]]" /etc/fstab |grep "^[^#;]"|awk  '{print $1}'|cut -d \: -f 1|sort -u)
 
 
 # check mount points for each nfs server
 # get list of mounts for each nfs server defined in fstab
 for i in $nfs_server; do
-   echo $i
+   echo "NFS server $i status"
+   echo "####################"
    mount_folders=$(grep $i /etc/fstab |grep "^[^#;]"|awk  '{print $2}')
    echo $mount_folders
    #test if nfs serice exists on each nfs server
