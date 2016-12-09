@@ -12,4 +12,4 @@ To Do:
 * comment and flag all non working mounts
 * add email notification to for all new non working mounts
 * add usecase background
-
+* there is a problem with stale file handle when doing df. These should be umounted if existing
