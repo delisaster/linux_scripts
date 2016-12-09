@@ -7,4 +7,8 @@ You can put the script in your crontab and it will check your nfs mountpoints ev
 To Do: 
 * Create a daemon so that checks can be done every few seconds
 * Solve the problem with forced umount even when nfs share is not mounted
+* Create a log file output
+* check bind mounts and remout them after respective mounts become active
+* comment and flag all non working mounts
+* add email notification to for all new non working mounts
 
