@@ -13,3 +13,6 @@ To Do:
 * add email notification to for all new non working mounts
 * add usecase background
 * there is a problem with stale file handle when doing df. These should be umounted if existing
+
+### check_cert.sh
+Checks the certificate expiry time and sends a notification two weeks in advance.
